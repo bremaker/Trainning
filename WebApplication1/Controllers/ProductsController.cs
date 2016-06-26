@@ -22,9 +22,11 @@ namespace ProductsApp.Controllers
         }
 
         [HttpGet]
-        public IQueryable<int,Product> GetProductsQuery()
+        public IQueryable<Product> GetProducts(int top, string orderby)
         {
-            return products.products.AsQueryable();
+            return products.GetAll().AsQueryable().OrderBy(prod => prod.Name);
+            //return products.GetAll().AsQueryable();
+            
         }
 
         [HttpGet]
