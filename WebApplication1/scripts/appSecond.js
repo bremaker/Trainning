@@ -35,7 +35,7 @@ myApp.controller('secondController', ['$scope', '$log', '$timeout', '$filter', '
     }
 
     Scope.getAllDishes = function (num_items) {
-        Http.get(Scope.URI_BASE + (num_items ? "?top=" + num_items + "&orderby=Name" : ""))
+        Http.get(Scope.URI_BASE + (num_items ? "?$top=" + num_items + "&$orderby=Name" : ""))
            .success(function (data) {
                Scope.dishes = CleanArray(data);
            })

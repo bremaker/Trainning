@@ -26,8 +26,16 @@ namespace ProductsApp.Controllers
         {
             return products.GetAll().AsQueryable().OrderBy(prod => prod.Name);
             //return products.GetAll().AsQueryable();
-            
+
         }
+
+        //[Queryable]
+        //public IQueryable<Product> GetProducts(/*int top, string orderby*/)
+        //{
+        //    //return products.GetAll().AsQueryable().OrderBy(prod => prod.Name);
+        //    return products.GetAll().AsQueryable();
+
+        //}
 
         [HttpGet]
         public IHttpActionResult GetProduct(int id)
